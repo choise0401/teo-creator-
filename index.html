@@ -19,13 +19,39 @@
     body {
       background: #050505;
       color: #f5f5f5;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Pretendard", "Noto Sans KR", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
       overflow-x: hidden;
+      cursor: none;
+    }
+
+    a, button, .content-card {
+      cursor: none;
+    }
+
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+      mix-blend-mode: difference;
+    }
+
+    .cursor.big {
+      width: 64px;
+      height: 64px;
+      background: rgba(255,255,255,0.18);
     }
 
     section {
       min-height: 100vh;
-      padding: 80px 8vw;
+      padding: 90px 8vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -34,21 +60,24 @@
     .hero {
       text-align: center;
       align-items: center;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,0.12), transparent 32%),
+        #050505;
     }
 
     .eyebrow {
-      font-size: 14px;
-      letter-spacing: 0.18em;
+      font-size: 13px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #8a8a8a;
-      margin-bottom: 24px;
+      color: #8f8f8f;
+      margin-bottom: 26px;
     }
 
     h1 {
-      font-size: clamp(56px, 10vw, 140px);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      max-width: 1100px;
+      font-size: clamp(58px, 10vw, 145px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      max-width: 1180px;
     }
 
     .hero p {
@@ -56,97 +85,215 @@
       font-size: clamp(18px, 2vw, 26px);
       color: #bdbdbd;
       max-width: 760px;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .enter-btn {
+      margin-top: 48px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: transparent;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      transition: all 0.25s ease;
+    }
+
+    .enter-btn:hover {
+      background: #fff;
+      color: #050505;
     }
 
     .intro {
-      background: #f5f1e8;
+      background: #f3efe4;
       color: #111;
     }
 
     .intro h2 {
       font-size: clamp(42px, 7vw, 96px);
       line-height: 1.05;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
       max-width: 1100px;
     }
 
     .intro p {
       margin-top: 36px;
-      font-size: 22px;
+      font-size: clamp(18px, 2vw, 23px);
       line-height: 1.8;
-      max-width: 780px;
+      max-width: 820px;
       color: #333;
     }
 
-    .content-section {
-      position: relative;
-      border-top: 1px solid rgba(255,255,255,0.12);
+    .gallery {
+      background: #050505;
+      padding-top: 120px;
+      padding-bottom: 120px;
     }
 
-    .number {
-      font-size: 14px;
-      color: #777;
-      letter-spacing: 0.18em;
+    .gallery-title {
+      font-size: clamp(40px, 7vw, 94px);
+      letter-spacing: -0.055em;
+      line-height: 1;
+      margin-bottom: 56px;
+    }
+
+    .content-card {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 64px;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.13);
+      padding: 80px 0;
+    }
+
+    .poster-wrap {
+      position: relative;
+    }
+
+    .poster {
+      width: 100%;
+      max-height: 720px;
+      object-fit: cover;
+      border-radius: 34px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.55);
+      filter: saturate(0.92);
+      transition: transform 0.45s ease, filter 0.45s ease;
+    }
+
+    .content-card:hover .poster {
+      transform: scale(1.025);
+      filter: saturate(1.08) brightness(1.04);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      color: #cfcfcf;
+      font-size: 13px;
+      letter-spacing: 0.08em;
       margin-bottom: 28px;
     }
 
-    .title {
-      font-size: clamp(54px, 9vw, 128px);
+    .card-text h2 {
+      font-size: clamp(52px, 7vw, 112px);
       line-height: 0.95;
       letter-spacing: -0.06em;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
-    .tag {
-      display: inline-block;
-      width: fit-content;
-      padding: 10px 18px;
-      border: 1px solid rgba(255,255,255,0.25);
+    .one-line {
+      font-size: clamp(24px, 3vw, 44px);
+      line-height: 1.25;
+      letter-spacing: -0.035em;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+
+    .desc {
+      font-size: clamp(17px, 1.55vw, 22px);
+      color: #c9c9c9;
+      line-height: 1.85;
+      max-width: 680px;
+    }
+
+    .note {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      color: #e8e8e8;
+      line-height: 1.75;
+      display: none;
+    }
+
+    .note.open {
+      display: block;
+      animation: openNote 0.35s ease;
+    }
+
+    @keyframes openNote {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .link-btn,
+    .note-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
       border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
       font-size: 14px;
-      color: #cfcfcf;
-      margin-bottom: 32px;
+      transition: all 0.25s ease;
     }
 
-    .description {
-      font-size: clamp(19px, 2vw, 28px);
-      line-height: 1.7;
-      max-width: 760px;
-      color: #d5d5d5;
+    .link-btn:hover,
+    .note-btn:hover {
+      background: #fff;
+      color: #050505;
     }
 
-    .quote {
-      margin-top: 56px;
-      font-size: clamp(28px, 5vw, 72px);
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: white;
-      max-width: 1100px;
+    .dp-card {
+      background: linear-gradient(135deg, #050505 0%, #161616 55%, #2b2b2b 100%);
     }
 
-    .dp {
-      background: linear-gradient(135deg, #050505 0%, #171717 60%, #2b2b2b 100%);
+    .cha-card {
+      background: linear-gradient(135deg, #080504 0%, #32150d 55%, #8b3a24 100%);
     }
 
-    .show {
-      background: linear-gradient(135deg, #120906 0%, #3a1810 60%, #7a3422 100%);
+    .wes-card {
+      background: linear-gradient(135deg, #f4c66d 0%, #d98972 48%, #607f8c 100%);
+      color: #111;
+      padding-left: 42px;
+      padding-right: 42px;
+      border-radius: 42px;
+      margin-top: 40px;
     }
 
-    .wes {
-      background: linear-gradient(135deg, #f6c36a 0%, #d9826b 45%, #607d8b 100%);
+    .wes-card .badge {
+      color: #111;
+      border-color: rgba(0,0,0,0.28);
+    }
+
+    .wes-card .one-line,
+    .wes-card .card-text h2 {
       color: #111;
     }
 
-    .wes .tag,
-    .wes .number,
-    .wes .description {
-      color: #1d1d1d;
-      border-color: rgba(0,0,0,0.25);
+    .wes-card .desc {
+      color: #222;
     }
 
-    .wes .quote {
+    .wes-card .note {
+      background: rgba(255,255,255,0.35);
       color: #111;
+    }
+
+    .wes-card .link-btn,
+    .wes-card .note-btn {
+      border-color: rgba(0,0,0,0.35);
+      color: #111;
+    }
+
+    .wes-card .link-btn:hover,
+    .wes-card .note-btn:hover {
+      background: #111;
+      color: #fff;
     }
 
     .final {
@@ -159,20 +306,28 @@
       font-size: clamp(48px, 8vw, 112px);
       line-height: 1;
       letter-spacing: -0.06em;
-      max-width: 1000px;
+      max-width: 1050px;
     }
 
     .final p {
       margin-top: 36px;
-      font-size: 22px;
-      line-height: 1.7;
-      max-width: 720px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.75;
+      max-width: 760px;
       color: #aaa;
+    }
+
+    .restart {
+      margin-top: 42px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      padding-bottom: 6px;
     }
 
     .fade {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(42px);
       transition: all 0.9s ease;
     }
 
@@ -181,31 +336,53 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 768px) {
-      section {
-        padding: 64px 24px;
+    @media (max-width: 900px) {
+      body {
+        cursor: auto;
       }
 
-      .intro p,
-      .description,
-      .final p {
-        font-size: 18px;
+      a, button, .content-card {
+        cursor: pointer;
+      }
+
+      .cursor {
+        display: none;
+      }
+
+      section {
+        padding: 70px 24px;
+      }
+
+      .content-card {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .wes-card {
+        padding-left: 24px;
+        padding-right: 24px;
+        border-radius: 30px;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="cursor"></div>
 
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="eyebrow fade">TEO University Creator Application</div>
     <h1 class="fade">Three Moments<br>That Made Me Stay.</h1>
     <p class="fade">
-      제가 재밌게 본 콘텐츠 3개를 고르라길래, 줄거리보다 제가 오래 머물렀던 순간들을 가져왔습니다.
+      제가 재밌게 본 콘텐츠 3개를 고르라길래,<br>
+      줄거리보다 제가 오래 머물렀던 순간들을 가져왔습니다.
     </p>
+    <button class="enter-btn fade" onclick="document.getElementById('intro').scrollIntoView()">
+      ENTER THE MOMENTS
+    </button>
   </section>
 
-  <section class="intro">
+  <section class="intro" id="intro">
     <h2 class="fade">
       저는 콘텐츠를 볼 때,<br>
       자꾸 다른 걸 봅니다.
@@ -217,43 +394,87 @@
     </p>
   </section>
 
-  <section class="content-section dp">
-    <div class="number fade">MOMENT 01</div>
-    <div class="tag fade">D.P. / silence / reality</div>
-    <h2 class="title fade">D.P.</h2>
-    <p class="description fade">
-      D.P.는 큰 사건보다 작은 표정과 침묵이 오래 남았습니다.
-      설명을 많이 하지 않아도 인물의 감정이 느껴졌고, 현실감은 결국 디테일에서 나온다는 걸 느꼈습니다.
-    </p>
-    <div class="quote fade">
-      “설명보다 분위기가<br>더 오래 남는 순간.”
-    </div>
-  </section>
+  <section class="gallery" id="gallery">
+    <h2 class="gallery-title fade">Selected by feeling,<br>remembered by moments.</h2>
 
-  <section class="content-section show">
-    <div class="number fade">MOMENT 02</div>
-    <div class="tag fade">차린건 쥐뿔도 없지만 / talk / chemistry</div>
-    <h2 class="title fade">차린건<br>쥐뿔도 없지만</h2>
-    <p class="description fade">
-      이 콘텐츠는 포맷이 복잡해서가 아니라, 사람이 풀리는 순간이 재밌었습니다.
-      정리되지 않은 대화, 예상 못 한 리액션, 편하게 흘러가는 분위기가 오히려 계속 보게 만들었습니다.
-    </p>
-    <div class="quote fade">
-      “차린 건 적어도,<br>사람이 있으면 이야기는 생긴다.”
-    </div>
-  </section>
+    <article class="content-card dp-card">
+      <div class="poster-wrap fade">
+        <img src="dp.webp" alt="D.P. poster" class="poster" />
+      </div>
 
-  <section class="content-section wes">
-    <div class="number fade">MOMENT 03</div>
-    <div class="tag fade">Wes Anderson Exhibition / color / travel</div>
-    <h2 class="title fade">Wes Anderson<br>Exhibition</h2>
-    <p class="description fade">
-      웨스 앤더슨 전시는 보는 동안 여행하는 기분이 들었습니다.
-      이야기를 길게 설명하지 않아도 색감, 대칭, 공간의 분위기만으로 사람을 다른 곳에 데려갈 수 있다는 점이 좋았습니다.
-    </p>
-    <div class="quote fade">
-      “전시를 보는 게 아니라,<br>잠깐 떠나는 기분.”
-    </div>
+      <div class="card-text">
+        <div class="badge fade">MOMENT 01 · DRAMA · REALITY</div>
+        <h2 class="fade">D.P.</h2>
+        <p class="one-line fade">설명보다 분위기가 더 오래 남는 순간.</p>
+        <p class="desc fade">
+          D.P.는 큰 사건보다 작은 표정과 침묵이 오래 남았습니다.
+          인물을 길게 설명하지 않아도, 상황 안에서 감정이 느껴졌습니다.
+          현실감은 결국 디테일에서 나온다는 걸 느끼게 한 콘텐츠였습니다.
+        </p>
+
+        <div class="actions fade">
+          <button class="note-btn" onclick="toggleNote('note-dp')">My Note</button>
+          <a class="link-btn" href="https://www.netflix.com/search?q=D.P." target="_blank">Explore on Netflix →</a>
+        </div>
+
+        <div class="note" id="note-dp">
+          제가 D.P.를 오래 기억한 이유는 “강한 장면” 때문만은 아니었습니다.
+          오히려 아무 말 없이 지나가는 얼굴, 불편한 침묵, 좁은 공간의 공기가 더 오래 남았습니다.
+        </div>
+      </div>
+    </article>
+
+    <article class="content-card cha-card">
+      <div class="poster-wrap fade">
+        <img src="cha.jpg" alt="차린건 쥐뿔도 없지만 thumbnail" class="poster" />
+      </div>
+
+      <div class="card-text">
+        <div class="badge fade">MOMENT 02 · WEB ENTERTAINMENT · TALK</div>
+        <h2 class="fade">차린건<br>쥐뿔도 없지만</h2>
+        <p class="one-line fade">차린 건 적어도, 사람이 있으면 이야기는 생긴다.</p>
+        <p class="desc fade">
+          이 콘텐츠는 포맷이 복잡해서가 아니라, 사람이 풀리는 순간이 재밌었습니다.
+          정리되지 않은 대화, 예상 못 한 리액션, 편하게 흘러가는 분위기가 오히려 계속 보게 만들었습니다.
+        </p>
+
+        <div class="actions fade">
+          <button class="note-btn" onclick="toggleNote('note-cha')">My Note</button>
+          <a class="link-btn" href="https://www.youtube.com/results?search_query=%EC%B0%A8%EB%A6%B0%EA%B1%B4+%EC%A5%90%EB%BF%94%EB%8F%84+%EC%97%86%EC%A7%80%EB%A7%8C" target="_blank">Watch on YouTube →</a>
+        </div>
+
+        <div class="note" id="note-cha">
+          제가 좋아한 건 “완벽한 진행”보다 자연스럽게 풀리는 대화였습니다.
+          준비된 포맷 안에서도 사람이 예상 밖으로 움직이는 순간이 가장 재밌었습니다.
+        </div>
+      </div>
+    </article>
+
+    <article class="content-card wes-card">
+      <div class="poster-wrap fade">
+        <img src="wesanderson.jpeg" alt="우연히, 웨스 앤더슨 전시 이미지" class="poster" />
+      </div>
+
+      <div class="card-text">
+        <div class="badge fade">MOMENT 03 · EXHIBITION · COLOR & TRAVEL</div>
+        <h2 class="fade">우연히,<br>웨스 앤더슨</h2>
+        <p class="one-line fade">전시를 보는 게 아니라, 잠깐 떠나는 기분.</p>
+        <p class="desc fade">
+          〈우연히, 웨스 앤더슨〉 전시는 보는 동안 여행하는 기분이 들었습니다.
+          이야기를 길게 설명하지 않아도 색감, 대칭, 공간의 분위기만으로 사람을 다른 곳에 데려갈 수 있다는 점이 좋았습니다.
+        </p>
+
+        <div class="actions fade">
+          <button class="note-btn" onclick="toggleNote('note-wes')">My Note</button>
+          <a class="link-btn" href="https://www.google.com/search?q=%EC%9A%B0%EC%97%B0%ED%9E%88+%EC%9B%A8%EC%8A%A4+%EC%95%A4%EB%8D%94%EC%8A%A8+%EC%A0%84%EC%8B%9C" target="_blank">Explore Exhibition →</a>
+        </div>
+
+        <div class="note" id="note-wes">
+          이 전시는 “설명”보다 “기분”으로 기억됐습니다.
+          저는 이런 콘텐츠가 좋습니다. 정보를 알려주기 전에 먼저 하나의 세계로 데려가는 콘텐츠.
+        </div>
+      </div>
+    </article>
   </section>
 
   <section class="final">
@@ -266,6 +487,7 @@
       제가 좋아하는 콘텐츠는 늘 사람을 잠깐 멈추게 만들었습니다.
       저도 TEO에서 그런 순간을 발견하고, 대학생의 시선으로 새롭게 보여주는 크리에이터가 되고 싶습니다.
     </p>
+    <a href="#top" class="restart fade">Restart ↑</a>
   </section>
 
   <script>
@@ -277,12 +499,26 @@
           entry.target.classList.add('show-up');
         }
       });
-    }, {
-      threshold: 0.2
-    });
+    }, { threshold: 0.18 });
 
     fades.forEach(el => observer.observe(el));
-  </script>
 
+    function toggleNote(id) {
+      const note = document.getElementById(id);
+      note.classList.toggle('open');
+    }
+
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .content-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+    });
+  </script>
 </body>
 </html>
