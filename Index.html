@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three Moments That Made Me Stay</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #050505;
+      color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Pretendard", "Noto Sans KR", sans-serif;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 8vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero {
+      text-align: center;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8a8a8a;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(56px, 10vw, 140px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      max-width: 1100px;
+    }
+
+    .hero p {
+      margin-top: 36px;
+      font-size: clamp(18px, 2vw, 26px);
+      color: #bdbdbd;
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .intro {
+      background: #f5f1e8;
+      color: #111;
+    }
+
+    .intro h2 {
+      font-size: clamp(42px, 7vw, 96px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      max-width: 1100px;
+    }
+
+    .intro p {
+      margin-top: 36px;
+      font-size: 22px;
+      line-height: 1.8;
+      max-width: 780px;
+      color: #333;
+    }
+
+    .content-section {
+      position: relative;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .number {
+      font-size: 14px;
+      color: #777;
+      letter-spacing: 0.18em;
+      margin-bottom: 28px;
+    }
+
+    .title {
+      font-size: clamp(54px, 9vw, 128px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 32px;
+    }
+
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 10px 18px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      font-size: 14px;
+      color: #cfcfcf;
+      margin-bottom: 32px;
+    }
+
+    .description {
+      font-size: clamp(19px, 2vw, 28px);
+      line-height: 1.7;
+      max-width: 760px;
+      color: #d5d5d5;
+    }
+
+    .quote {
+      margin-top: 56px;
+      font-size: clamp(28px, 5vw, 72px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: white;
+      max-width: 1100px;
+    }
+
+    .dp {
+      background: linear-gradient(135deg, #050505 0%, #171717 60%, #2b2b2b 100%);
+    }
+
+    .show {
+      background: linear-gradient(135deg, #120906 0%, #3a1810 60%, #7a3422 100%);
+    }
+
+    .wes {
+      background: linear-gradient(135deg, #f6c36a 0%, #d9826b 45%, #607d8b 100%);
+      color: #111;
+    }
+
+    .wes .tag,
+    .wes .number,
+    .wes .description {
+      color: #1d1d1d;
+      border-color: rgba(0,0,0,0.25);
+    }
+
+    .wes .quote {
+      color: #111;
+    }
+
+    .final {
+      text-align: center;
+      align-items: center;
+      background: #050505;
+    }
+
+    .final h2 {
+      font-size: clamp(48px, 8vw, 112px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      max-width: 1000px;
+    }
+
+    .final p {
+      margin-top: 36px;
+      font-size: 22px;
+      line-height: 1.7;
+      max-width: 720px;
+      color: #aaa;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s ease;
+    }
+
+    .fade.show-up {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 64px 24px;
+      }
+
+      .intro p,
+      .description,
+      .final p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="eyebrow fade">TEO University Creator Application</div>
+    <h1 class="fade">Three Moments<br>That Made Me Stay.</h1>
+    <p class="fade">
+      제가 재밌게 본 콘텐츠 3개를 고르라길래, 줄거리보다 제가 오래 머물렀던 순간들을 가져왔습니다.
+    </p>
+  </section>
+
+  <section class="intro">
+    <h2 class="fade">
+      저는 콘텐츠를 볼 때,<br>
+      자꾸 다른 걸 봅니다.
+    </h2>
+    <p class="fade">
+      왜 어떤 장면은 오래 남고, 어떤 대화는 계속 보게 되는지 궁금합니다.
+      사람들의 반응과 흐름을 관찰하는 걸 좋아해서인지, 지금은 미국 대학에서 데이터 사이언스를 전공하고 있습니다.
+      제가 좋아한 콘텐츠들은 장르도 분위기도 다르지만, 공통적으로 저를 잠깐 다른 세계에 머물게 했습니다.
+    </p>
+  </section>
+
+  <section class="content-section dp">
+    <div class="number fade">MOMENT 01</div>
+    <div class="tag fade">D.P. / silence / reality</div>
+    <h2 class="title fade">D.P.</h2>
+    <p class="description fade">
+      D.P.는 큰 사건보다 작은 표정과 침묵이 오래 남았습니다.
+      설명을 많이 하지 않아도 인물의 감정이 느껴졌고, 현실감은 결국 디테일에서 나온다는 걸 느꼈습니다.
+    </p>
+    <div class="quote fade">
+      “설명보다 분위기가<br>더 오래 남는 순간.”
+    </div>
+  </section>
+
+  <section class="content-section show">
+    <div class="number fade">MOMENT 02</div>
+    <div class="tag fade">차린건 쥐뿔도 없지만 / talk / chemistry</div>
+    <h2 class="title fade">차린건<br>쥐뿔도 없지만</h2>
+    <p class="description fade">
+      이 콘텐츠는 포맷이 복잡해서가 아니라, 사람이 풀리는 순간이 재밌었습니다.
+      정리되지 않은 대화, 예상 못 한 리액션, 편하게 흘러가는 분위기가 오히려 계속 보게 만들었습니다.
+    </p>
+    <div class="quote fade">
+      “차린 건 적어도,<br>사람이 있으면 이야기는 생긴다.”
+    </div>
+  </section>
+
+  <section class="content-section wes">
+    <div class="number fade">MOMENT 03</div>
+    <div class="tag fade">Wes Anderson Exhibition / color / travel</div>
+    <h2 class="title fade">Wes Anderson<br>Exhibition</h2>
+    <p class="description fade">
+      웨스 앤더슨 전시는 보는 동안 여행하는 기분이 들었습니다.
+      이야기를 길게 설명하지 않아도 색감, 대칭, 공간의 분위기만으로 사람을 다른 곳에 데려갈 수 있다는 점이 좋았습니다.
+    </p>
+    <div class="quote fade">
+      “전시를 보는 게 아니라,<br>잠깐 떠나는 기분.”
+    </div>
+  </section>
+
+  <section class="final">
+    <h2 class="fade">
+      I want to create<br>
+      moments people<br>
+      don’t scroll past.
+    </h2>
+    <p class="fade">
+      제가 좋아하는 콘텐츠는 늘 사람을 잠깐 멈추게 만들었습니다.
+      저도 TEO에서 그런 순간을 발견하고, 대학생의 시선으로 새롭게 보여주는 크리에이터가 되고 싶습니다.
+    </p>
+  </section>
+
+  <script>
+    const fades = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show-up');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    fades.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
