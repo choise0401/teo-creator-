@@ -24,7 +24,7 @@
       cursor: none;
     }
 
-    a, button, .content-card {
+    a, button, .content-card, .coffee-card {
       cursor: none;
     }
 
@@ -148,10 +148,6 @@
       padding: 80px 0;
     }
 
-    .poster-wrap {
-      position: relative;
-    }
-
     .poster {
       width: 100%;
       max-height: 720px;
@@ -257,7 +253,7 @@
     }
 
     .wes-card {
-      background: linear-gradient(135deg, #f4c66d 0%, #d98972 48%, #607f8c 100%);
+      background: linear-gradient(135deg, #f4c66d 0%, #d98972 48%, #607f8b 100%);
       color: #111;
       padding-left: 42px;
       padding-right: 42px;
@@ -317,6 +313,88 @@
       color: #aaa;
     }
 
+    .coffee-card {
+      margin-top: 90px;
+      padding: 80px 64px;
+      border-radius: 44px;
+      background: #f3efe4;
+      color: #111;
+      max-width: 1200px;
+      width: 100%;
+      box-shadow: 0 45px 140px rgba(255,255,255,0.1);
+      transition: transform 0.45s ease, box-shadow 0.45s ease;
+    }
+
+    .coffee-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 65px 160px rgba(255,255,255,0.16);
+    }
+
+    .coffee-card span {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.24em;
+      color: #777;
+      margin-bottom: 28px;
+    }
+
+    .coffee-card h3 {
+      font-size: clamp(58px, 8vw, 130px);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+      font-weight: 800;
+    }
+
+    .coffee-actions {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .yes-btn,
+    .no-btn {
+      min-width: 150px;
+      padding: 17px 30px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .yes-btn {
+      background: #111;
+      color: #f3efe4;
+    }
+
+    .no-btn {
+      background: transparent;
+      color: #111;
+    }
+
+    .yes-btn:hover,
+    .no-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .no-message {
+      display: none;
+      margin: 36px auto 0;
+      color: #111 !important;
+      font-size: clamp(18px, 2vw, 28px) !important;
+      line-height: 1.6;
+      max-width: 760px;
+    }
+
+    .no-message.show {
+      display: block;
+      animation: openNote 0.35s ease;
+    }
+
     .restart {
       margin-top: 42px;
       color: #fff;
@@ -341,7 +419,7 @@
         cursor: auto;
       }
 
-      a, button, .content-card {
+      a, button, .content-card, .coffee-card {
         cursor: pointer;
       }
 
@@ -363,67 +441,15 @@
         padding-right: 24px;
         border-radius: 30px;
       }
-      <style>
-  기존 css들...
 
-  .restart {
-    ...
-  }
- .coffee-card {
-  margin-top: 110px;
-  width: 100%;
-  max-width: 1400px;
+      .coffee-card {
+        padding: 52px 28px;
+      }
 
-  padding: 90px 70px;
-
-  border-radius: 44px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f4f1e8 0%,
-      #e7dcc7 100%
-    );
-
-  color: #111;
-
-  box-shadow:
-    0 40px 120px rgba(255,255,255,0.08);
-
-  transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
-}
-
-.coffee-card:hover {
-  transform: translateY(-12px);
-  box-shadow:
-    0 60px 160px rgba(255,255,255,0.16);
-}
-
-.coffee-card span {
-  display: block;
-
-  font-size: 14px;
-
-  letter-spacing: 0.24em;
-
-  color: #777;
-
-  margin-bottom: 34px;
-}
-
-.coffee-card h3 {
-  font-size: clamp(90px, 10vw, 170px);
-
-  line-height: 0.92;
-
-  letter-spacing: -0.09em;
-
-  font-weight: 800;
-
-  max-width: 1200px;
-}
+      .coffee-card h3 {
+        font-size: clamp(44px, 14vw, 80px);
+      }
+    }
   </style>
 </head>
 
@@ -444,13 +470,12 @@
 
   <section class="intro" id="intro">
     <h2 class="fade">
-    어떤 콘텐츠는<br>
-    괜히 오래 남습니다.
+      어떤 콘텐츠는<br>
+      괜히 오래 남습니다.
     </h2>
     <p class="fade">
-      왜 어떤 장면은 오래 남고, 어떤 대화는 계속 보게 되는지 궁금합니다.
-      사람들의 반응과 흐름을 관찰하는 걸 좋아해서인지, 지금은 미국 대학에서 데이터 사이언스를 전공하고 있습니다.
-      제가 좋아한 콘텐츠들은 장르도 분위기도 다르지만, 공통적으로 저를 잠깐 다른 세계에 머물게 했습니다.
+      정확한 이유를 설명하기는 어렵지만, 어떤 장면이나 분위기는 오래 기억에 남더라고요.
+      제가 좋아한 콘텐츠들도 전부 조금씩 달랐지만, 공통적으로 저를 잠깐 다른 세계에 머물게 했습니다.
     </p>
   </section>
 
@@ -494,8 +519,8 @@
         <h2 class="fade">차린건<br>쥐뿔도 없지만</h2>
         <p class="one-line fade">차린 건 적어도, 사람이 있으면 이야기는 생긴다.</p>
         <p class="desc fade">
-          이 콘텐츠는 포맷이 복잡해서가 아니라, 사람이 풀리는 순간이 재밌었습니다.
-          정리되지 않은 대화, 예상 못 한 리액션, 편하게 흘러가는 분위기가 오히려 계속 보게 만들었습니다.
+          이 콘텐츠는 포맷이 복잡해서가 아니라, 사람이 편해지는 순간이 재밌었습니다.
+          정리되지 않은 대화, 예상 못 한 리액션, 자연스럽게 흘러가는 분위기가 계속 보게 만들었습니다.
         </p>
 
         <div class="actions fade">
@@ -538,27 +563,33 @@
   </section>
 
   <section class="final">
-  <div class="eyebrow fade">ONE MORE QUESTION</div>
+    <h2 class="fade">
+      I want to create<br>
+      moments people<br>
+      don’t scroll past.
+    </h2>
 
-  <section class="final">
-  <h2 class="fade">
-    I want to create<br>
-    moments people<br>
-    don’t scroll past.
-  </h2>
+    <p class="fade">
+      제가 좋아하는 콘텐츠는 늘 사람을 잠깐 멈추게 만들었습니다.
+      저도 TEO에서 그런 순간을 발견하고, 대학생의 시선으로 새롭게 보여주는 크리에이터가 되고 싶습니다.
+    </p>
 
-  <p class="fade">
-    제가 좋아하는 콘텐츠는 늘 사람을 잠깐 멈추게 만들었습니다.
-    저도 TEO에서 그런 순간을 발견하고, 대학생의 시선으로 새롭게 보여주는 크리에이터가 되고 싶습니다.
-  </p>
+    <div class="coffee-card fade">
+      <span>ONE MORE QUESTION</span>
+      <h3>저랑 커피 한 잔 하시겠습니까?</h3>
 
-  <div class="coffee-card fade">
-    <span>ONE MORE QUESTION</span>
-    <h3>저랑 커피 한 잔 해주시겠습니까?</h3>
-  </div>
+      <div class="coffee-actions">
+        <a class="yes-btn" href="https://www.linkedin.com/in/seungeun-choi-60b783291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">YES</a>
+        <button class="no-btn" onclick="showNoMessage()">NO</button>
+      </div>
 
-  <a href="#top" class="restart fade">Restart ↑</a>
-</section>
+      <p class="no-message" id="no-message">
+        알겠습니다. 그럼 더 재미있는 사람이 되어 다시 찾아오겠습니다.
+      </p>
+    </div>
+
+    <a href="#top" class="restart fade">Restart ↑</a>
+  </section>
 
   <script>
     const fades = document.querySelectorAll('.fade');
@@ -578,6 +609,11 @@
       note.classList.toggle('open');
     }
 
+    function showNoMessage() {
+      const message = document.getElementById('no-message');
+      message.classList.add('show');
+    }
+
     const cursor = document.querySelector('.cursor');
 
     document.addEventListener('mousemove', e => {
@@ -585,7 +621,7 @@
       cursor.style.top = e.clientY + 'px';
     });
 
-    document.querySelectorAll('a, button, .content-card').forEach(el => {
+    document.querySelectorAll('a, button, .content-card, .coffee-card').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('big'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
     });
