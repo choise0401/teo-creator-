@@ -363,7 +363,42 @@
         padding-right: 24px;
         border-radius: 30px;
       }
-    }
+      <style>
+  기존 css들...
+
+  .restart {
+    ...
+  }
+  .coffee-card {
+    margin-top: 70px;
+    padding: 46px 54px;
+    border-radius: 34px;
+    background: #f3efe4;
+    color: #111;
+    max-width: 760px;
+    width: 100%;
+    box-shadow: 0 30px 90px rgba(255,255,255,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .coffee-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 40px 120px rgba(255,255,255,0.14);
+  }
+
+  .coffee-card span {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: #777;
+    margin-bottom: 22px;
+  }
+
+  .coffee-card h3 {
+    font-size: clamp(38px, 6vw, 82px);
+    line-height: 1.05;
+    letter-spacing: -0.06em;
+  }
   </style>
 </head>
 
@@ -480,6 +515,7 @@
   <section class="final">
   <div class="eyebrow fade">ONE MORE QUESTION</div>
 
+  <section class="final">
   <h2 class="fade">
     I want to create<br>
     moments people<br>
@@ -491,8 +527,9 @@
     저도 TEO에서 그런 순간을 발견하고, 대학생의 시선으로 새롭게 보여주는 크리에이터가 되고 싶습니다.
   </p>
 
-  <div class="coffee fade">
-    저랑 커피 한 잔 하시겠습니까?
+  <div class="coffee-card fade">
+    <span>ONE MORE QUESTION</span>
+    <h3>저랑 커피 한 잔<br>하시겠습니까?</h3>
   </div>
 
   <a href="#top" class="restart fade">Restart ↑</a>
